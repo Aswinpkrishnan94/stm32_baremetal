@@ -1,0 +1,18 @@
+Hardware: STm32 F446re, Seven Segment Led, Resistor: 330 Ohms,  Jumper wires, BreadBoard, Multimeter
+References: Stm32F446xx Reference Manual, 5161AH - Seven Segment LED Datasheet
+
+Project 1: Display a Seven Segment LED using GPIO Pins
+
+    Description: GPIO Port C pins 0 to 6 were used for connecting the seven segment led
+
+                 Common Cathode:
+                       data: 0 = 0x3F
+                       data: 1 = 0x06
+                       data: 2 = 0x5B
+                       data: 3 = 0x4F
+                       data: 4 = 0x66
+                       data: 5 = 0x6D
+                       data: 6 = 0x7D
+                       data: 7 = 0x07
+                       data: 8 = 0x7F
+                       data: 9 = 0x6F
