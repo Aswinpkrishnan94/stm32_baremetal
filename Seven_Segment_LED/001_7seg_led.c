@@ -14,7 +14,6 @@ int main(void)
 	uint32_t *pGPIOC_ModeReg	 = (uint32_t*)0x40020800U;
 	uint32_t *popdatareg 		 = (uint32_t*)0x40020814U;
 
-	*pclkctrlreg |= (1<<1);
 	*pclkctrlreg |= (1<<2);
 
 	*pGPIOC_ModeReg &= ~(0xFFFF<<0);
