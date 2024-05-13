@@ -4,6 +4,7 @@ int main()
 {
 	GPIO_Handle_t gpioled, gpiobutton;
 
+	// LED connected tp GPIO Port A Pin 5
 	gpioled.pGPIOx = GPIOA;
 	gpioled.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_5;
 	gpioled.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
@@ -12,6 +13,7 @@ int main()
 	gpioled.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 	GPIO_Init(&gpioled);
 
+	// External button connected to GPIO Port C pin 13
 	gpiobutton.pGPIOx = GPIOC;
 	gpiobutton.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
 	gpiobutton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
@@ -24,7 +26,7 @@ int main()
 
 	while(1)
 	{
-		if(!GPIO_ReadFromPin(GPIOC, GPIO_PIN_NO_0))
+		if(!GPIO_ReadFromPin(GPIOC, GPIO_PIN_NO_0))			// check the status of the button
 		{
 			GPIO_WriteToPin(GPIOA, GPIO_PIN_NO_5, SET);
 		}
