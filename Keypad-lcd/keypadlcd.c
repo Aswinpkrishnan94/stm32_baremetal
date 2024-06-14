@@ -92,7 +92,7 @@ void LCD_Data(unsigned char data, uint32_t *pgpiocodr)
 void LCD_Cmd(unsigned char cmd, uint32_t *pgpiocodr)
 {
 	LCD_PrintData(cmd, pgpiocodr);
-	*pgpiocodr &= ~(1<<8);			// make RS high
+	*pgpiocodr &= ~(1<<8);			// make RS low
 	*pgpiocodr &= ~(1<<9);			// make RnW low
 	*pgpiocodr |=  (1<<10);			// make Enable high
 	delay();
