@@ -5,6 +5,14 @@ void delay()
 	for(uint32_t i=0;i<20000;i++);		// simple delay
 }
 
+void LCD_Clear(uint32_t *pgpiocodr) {
+    // Send clear display command
+    LCD_Cmd(0x01, pgpiocodr); // 0x01 is the command code for clear display
+
+    // Delay after sending command (adjust as needed)
+    delay();  // This delay should allow the LCD sufficient time to clear the display
+}
+
 int key_hit(uint32_t *pgpioaidr, uint32_t *pgpiobidr, uint32_t *pgpioaodr)
 {
 	// Set all row pins high initially
@@ -128,16 +136,16 @@ int main()
 
 	// Initialize GPIO Port C for LCD Output
 	uint32_t *pgpiocmodereg 	= (uint32_t*)0x40020800U;
-	uint32_t *pgpiocodr		= (uint32_t*)0x40020814U;
+	uint32_t *pgpiocodr		    = (uint32_t*)0x40020814U;
 
 	*pgpiocmodereg &= ~(0x3FFFFF<<0);
 	*pgpiocmodereg |=  (0x155555<<0);		// setting mode register
 
 	// Initialize GPIO Port A and Port B for keypad input
 	uint32_t *pgpioamodereg 	= (uint32_t*)0x40020000U;
-	uint32_t *pgpioaodr		= (uint32_t*)0x40020014U;
-	uint32_t *pgpioaidr		= (uint32_t*)0x40020010U;
-	uint32_t *pgpioapupdr	 	= (uint32_t*)0x4002000CU;
+	uint32_t *pgpioaodr		    = (uint32_t*)0x40020014U;
+	uint32_t *pgpioaidr		    = (uint32_t*)0x40020010U;
+	uint32_t *pgpioapupdr	    = (uint32_t*)0x4002000CU;
 
 	// GPIO Port B Registers
 	uint32_t *pgpiobmodereg   = (uint32_t *)0x40020400U;
@@ -181,95 +189,111 @@ int main()
 		switch(key)
 		{
 		case 1:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("one",pgpiocodr);
 			delay();
 			break;
 
 		case 2:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("two",pgpiocodr);
 			delay();
 			break;
 
 		case 3:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("three",pgpiocodr);
 			delay();
 			break;
 
 		case 4:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("A",pgpiocodr);
 			delay();
 			break;
 
 		case 5:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("four",pgpiocodr);
 			delay();
 			break;
 
 		case 6:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("five",pgpiocodr);
 			delay();
 			break;
 
 		case 7:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("six",pgpiocodr);
 			delay();
 			break;
 
 		case 8:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("B",pgpiocodr);
 			delay();
 			break;
 
 		case 9:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("seven",pgpiocodr);
 			delay();
 			break;
 
 		case 10:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("eight",pgpiocodr);
 			delay();
 			break;
 
 		case 11:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("nine",pgpiocodr);
 			delay();
 			break;
 
 		case 12:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("C",pgpiocodr);
 			delay();
 			break;
 
 		case 13:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("*",pgpiocodr);
 			break;
 
 		case 14:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("zero",pgpiocodr);
 			delay();
 			break;
 
 		case 15:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("#",pgpiocodr);
 			delay();
 			break;
 
 		case 16:
+			LCD_Clear(pgpiocodr);
 			LCD_Cmd(0x80, pgpiocodr);
 			LCD_String("D",pgpiocodr);
 			delay();
