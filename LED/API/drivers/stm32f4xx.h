@@ -469,9 +469,23 @@ typedef struct{
 #define SYSTICK				((SysTick_RegDef_t*)SYSTICK_BASEADDR)
 
 #define TIM1				((Tim1_RegDef_t*)TIM1_BASEADDR)
+#define TIM8				((Tim1_RegDef_t*)TIM8_BASEADDR)
+
 #define TIM2				((Tim2_RegDef_t*)TIM2_BASEADDR)
+#define TIM3				((Tim2_RegDef_t*)TIM3_BASEADDR)
+#define TIM4				((Tim2_RegDef_t*)TIM4_BASEADDR)
+#define TIM5				((Tim2_RegDef_t*)TIM5_BASEADDR)
+
+#define TIM6				((Tim6_RegDef_t*)TIM6_BASEADDR)
+#define TIM7				((Tim6_RegDef_t*)TIM7_BASEADDR)
+
 #define TIM9				((Tim9_RegDef_t*)TIM9_BASEADDR)
+#define TIM12				((Tim9_RegDef_t*)TIM12_BASEADDR)
+
 #define TIM10				((Tim10_RegDef_t*)TIM10_BASEADDR)
+#define TIM11				((Tim10_RegDef_t*)TIM11_BASEADDR)
+#define TIM13				((Tim10_RegDef_t*)TIM13_BASEADDR)
+#define TIM14				((Tim10_RegDef_t*)TIM14_BASEADDR)
 
 /*
  * Clock Enable Macros for GPIOx peripherals
@@ -587,11 +601,11 @@ typedef struct{
 										(x == GPIOB)?1:\
 										(x == GPIOC)?2:\
 										(x == GPIOD)?3:\
-								       		(x == GPIOE)?4:\
-								        	(x == GPIOF)?5:\
-								       		(x == GPIOG)?6:\
-								       		(x == GPIOH)?7: \
-								       		(x == GPIOI)?8:0)
+								        (x == GPIOE)?4:\
+								        (x == GPIOF)?5:\
+								        (x == GPIOG)?6:\
+								        (x == GPIOH)?7: \
+								        (x == GPIOI)?8:0)
 
 
 /*
@@ -607,24 +621,24 @@ typedef struct{
 #define IRQ_NO_EXTI4 		10
 #define IRQ_NO_EXTI9_5 		23
 #define IRQ_NO_EXTI15_10 	40
-#define IRQ_NO_SPI1		35
-#define IRQ_NO_SPI2        	36
-#define IRQ_NO_SPI3        	51
+#define IRQ_NO_SPI1			35
+#define IRQ_NO_SPI2         36
+#define IRQ_NO_SPI3         51
 #define IRQ_NO_SPI4
-#define IRQ_NO_I2C1_EV      	31
-#define IRQ_NO_I2C1_ER     	32
-#define IRQ_NO_USART1	   	37
-#define IRQ_NO_USART2	  	38
-#define IRQ_NO_USART3	  	39
-#define IRQ_NO_UART4	 	52
-#define IRQ_NO_UART5	 	53
-#define IRQ_NO_USART6	 	71
+#define IRQ_NO_I2C1_EV  	31
+#define IRQ_NO_I2C1_ER      32
+#define IRQ_NO_USART1	    37
+#define IRQ_NO_USART2	    38
+#define IRQ_NO_USART3	    39
+#define IRQ_NO_UART4	    52
+#define IRQ_NO_UART5	    53
+#define IRQ_NO_USART6	    71
 
 
 /*
  * macros for all the possible priority levels
  */
-#define NVIC_IRQ_PRI0     0
+#define NVIC_IRQ_PRI0    0
 #define NVIC_IRQ_PRI15    15
 
 
@@ -643,12 +657,12 @@ typedef struct{
 #define SPI_CR1_LSBFIRST   			 	 7
 #define SPI_CR1_SSI     				 8
 #define SPI_CR1_SSM      				 9
-#define SPI_CR1_RXONLY      		 		10
+#define SPI_CR1_RXONLY      		 	10
 #define SPI_CR1_DFF     			 	11
 #define SPI_CR1_CRCNEXT   			 	12
 #define SPI_CR1_CRCEN   			 	13
 #define SPI_CR1_BIDIOE     			 	14
-#define SPI_CR1_BIDIMODE      				15
+#define SPI_CR1_BIDIMODE      			15
 
 /*
  * Bit position definitions SPI_CR2
@@ -656,7 +670,7 @@ typedef struct{
 #define SPI_CR2_RXDMAEN		 			0
 #define SPI_CR2_TXDMAEN				 	1
 #define SPI_CR2_SSOE				 	2
-#define SPI_CR2_FRF					4
+#define SPI_CR2_FRF						4
 #define SPI_CR2_ERRIE					5
 #define SPI_CR2_RXNEIE				 	6
 #define SPI_CR2_TXEIE					7
@@ -667,9 +681,9 @@ typedef struct{
  */
 #define SPI_SR_RXNE						0
 #define SPI_SR_TXE				 		1
-#define SPI_SR_CHSIDE				 		2
+#define SPI_SR_CHSIDE				 	2
 #define SPI_SR_UDR					 	3
-#define SPI_SR_CRCERR				 		4
+#define SPI_SR_CRCERR				 	4
 #define SPI_SR_MODF					 	5
 #define SPI_SR_OVR					 	6
 #define SPI_SR_BSY					 	7
@@ -681,7 +695,7 @@ typedef struct{
 /*
  * Bit position definitions I2C_CR1
  */
-#define I2C_CR1_PE					0
+#define I2C_CR1_PE						0
 #define I2C_CR1_NOSTRETCH  				7
 #define I2C_CR1_START 					8
 #define I2C_CR1_STOP  				 	9
@@ -694,7 +708,7 @@ typedef struct{
 #define I2C_CR2_FREQ				 	0
 #define I2C_CR2_ITERREN				 	8
 #define I2C_CR2_ITEVTEN				 	9
-#define I2C_CR2_ITBUFEN 			  	10
+#define I2C_CR2_ITBUFEN 			    10
 
 /*
  * Bit position definitions I2C_OAR1
@@ -708,7 +722,7 @@ typedef struct{
  * Bit position definitions I2C_SR1
  */
 
-#define I2C_SR1_SB 					0
+#define I2C_SR1_SB 					 	0
 #define I2C_SR1_ADDR 				 	1
 #define I2C_SR1_BTF 					2
 #define I2C_SR1_ADD10 					3
@@ -717,14 +731,14 @@ typedef struct{
 #define I2C_SR1_TXE 					7
 #define I2C_SR1_BERR 					8
 #define I2C_SR1_ARLO 					9
-#define I2C_SR1_AF 					10
+#define I2C_SR1_AF 					 	10
 #define I2C_SR1_OVR 					11
 #define I2C_SR1_TIMEOUT 				14
 
 /*
  * Bit position definitions I2C_SR2
  */
-#define I2C_SR2_MSL					0
+#define I2C_SR2_MSL						0
 #define I2C_SR2_BUSY 					1
 #define I2C_SR2_TRA 					2
 #define I2C_SR2_GENCALL 				4
@@ -822,6 +836,5 @@ typedef struct{
 #include "stm32f4xx_spi_driver.h"
 #include "stm32f4xx_usart_driver.h"
 #include "stm32f4xx_rcc_driver.h"
-
 
 #endif /* STM32F4XX_H_ */
