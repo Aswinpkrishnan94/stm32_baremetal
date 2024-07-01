@@ -276,7 +276,7 @@ typedef struct
 }USART_RegDef_t;
 
 /*
- * peripheral register definition structure for EXTI
+ * peripheral register definition structure for ADC
  */
 typedef struct
 {
