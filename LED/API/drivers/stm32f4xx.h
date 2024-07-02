@@ -131,13 +131,6 @@
 
 /**********************************peripheral register definition structures **********************************/
 
-/*
- * Note : Registers of a peripheral are specific to MCU
- * e.g : Number of Registers of SPI peripheral of STM32F4x family of MCUs may be different(more or less)
- * Compared to number of registers of SPI peripheral of STM32Lx or STM32F0x family of MCUs
- * Please check your Device RM
- */
-
 typedef struct
 {
 	__vo uint32_t MODER;                        // Mode Register                    	Address offset: 0x00      */
