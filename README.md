@@ -1,1 +1,1 @@
-The current repository includes baremetal coding examples with stm32 f446re board.
+The current repository includes bare-metal coding with an STM32f446re board.
