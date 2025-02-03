@@ -183,7 +183,7 @@ int main(void)
 	LCD_Init(popdatareg);
 	LCD_Cmd(0x80, popdatareg);  //Move cursor into first row first column
 	LCD_String("HELLO", 5, popdatareg);
-	LCD_Cmd(0xC0, popdatareg);  //Move cursor into first row first column
+	LCD_Cmd(0xC0, popdatareg);  //Move cursor into second row first column
 	delay();
 	LCD_String("WORLD", 5, popdatareg);
 
