@@ -1,6 +1,5 @@
 #include "main.h"
 #include "stm32h7xx.h"
-#include "stm32h7xx_hal.h"
 
 void delay(int ms)
 {
